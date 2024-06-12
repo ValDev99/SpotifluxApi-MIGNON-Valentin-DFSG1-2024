@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}track{% endblock %}
+
+{% block body %}
+    <h1>track</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ track.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ track.title }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_web_track_index') }}">back to list</a>
+
+    <a href="{{ path('app_web_track_edit', {'id': track.id}) }}">edit</a>
+
+    {{ include('web/track/_delete_form.html.twig') }}
+{% endblock %}
